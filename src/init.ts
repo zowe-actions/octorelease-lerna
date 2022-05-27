@@ -26,7 +26,7 @@ export default async function (context: IContext, _config: IPluginConfig): Promi
 
     let publishConfig;
     try {
-        const lernaJson = JSON.parse(fs.readFileSync("lerna.json", "utf-8"))
+        const lernaJson = JSON.parse(fs.readFileSync("lerna.json", "utf-8"));
         context.version.new = lernaJson.version;
         publishConfig = lernaJson.publish;
     } catch {
