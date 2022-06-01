@@ -34,3 +34,5 @@ The plugin can be configured in the [Octorelease configuration file](https://git
 ## Configuration
 
 See the documentation for [@octorelease/npm](https://github.com/octorelease/octorelease/tree/master/packages/npm#configuration).
+
+<!-- TODO Mention npm@7 or newer requirement for workspaces -->
