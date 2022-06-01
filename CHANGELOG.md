@@ -1,5 +1,9 @@
 # Changelog
 
+## Recent Changes
+
+* Fixed init stage not detecting publish registry configured in lerna.json
+
 ## `0.1.0`
 
 * Fixed init stage logging in to npm when `npmPublish` is false

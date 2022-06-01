@@ -24,7 +24,7 @@ export default async function (context: IContext, config: IPluginConfig): Promis
     try {
         const lernaJson = JSON.parse(fs.readFileSync("lerna.json", "utf-8"));
         context.version.new = lernaJson.version;
-        publishConfig = lernaJson.publish;
+        publishConfig = lernaJson.command?.publish;
     } catch {
         context.logger.warn(`Missing or invalid lerna.json in branch ${context.branch.name}`);
     }
