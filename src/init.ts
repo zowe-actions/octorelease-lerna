@@ -30,7 +30,7 @@ export default async function (context: IContext, config: IPluginConfig): Promis
     }
 
     try {
-        const packageJson = JSON.parse(fs.readFileSync("package.json", "utf-8"))
+        const packageJson = JSON.parse(fs.readFileSync("package.json", "utf-8"));
         context.workspaces = packageJson.workspaces;
         if (publishConfig == null) {
             publishConfig = packageJson.publishConfig;
