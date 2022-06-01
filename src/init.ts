@@ -30,7 +30,11 @@ export default async function (context: IContext, config: IPluginConfig): Promis
     }
 
     try {
-        context.workspaces = JSON.parse(fs.readFileSync("package.json", "utf-8")).workspaces;
+        const packageJson = JSON.parse(fs.readFileSync("package.json", "utf-8"))
+        context.workspaces = packageJson.workspaces;
+        if (publishConfig == null) {
+            publishConfig = packageJson.publishConfig;
+        }
     } catch {
         context.logger.warn(`Missing or invalid package.json in branch ${context.branch.name}`);
     }
