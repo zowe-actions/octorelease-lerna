@@ -1,6 +1,6 @@
 # Changelog
 
-## `0.1.0`
+## Recent Changes
 
 * Fixed init stage not detecting publish registry configured in lerna.json
 
