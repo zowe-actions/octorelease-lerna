@@ -1,6 +1,6 @@
 {
   "name": "@octorelease/lerna",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Octorelease plugin to perform actions related to NPM for Lerna monorepo.",
   "main": "lib/index.js",
   "files": [
