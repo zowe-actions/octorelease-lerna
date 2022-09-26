@@ -20,7 +20,11 @@ import { IPluginConfig } from "./config";
 import * as utils from "./utils";
 
 export default async function (context: IContext, config: IPluginConfig): Promise<void> {
-    for (const { location } of await utils.lernaList()) {
-        await npmPublish(context, config, location);
+    for (const { name, location } of await utils.lernaList()) {
+        const tempConfig = { ...config };
+        if (Array.isArray(config.pruneShrinkwrap)) {
+            tempConfig.pruneShrinkwrap = config.pruneShrinkwrap.includes(name);
+        }
+        await npmPublish(context, tempConfig, location);
     }
 }
